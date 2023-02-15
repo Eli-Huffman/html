@@ -1,0 +1,7 @@
+JS 1
+1. Youtube API https://developers.google.com/youtube/v3
+
+JS 2
+1. Chrome: Scripts are passed into syntax, and then interpretted as code. Meaning JS is translated into something the browser can understand.
+Mozilla: Translates the code into bytecode, then it goes through a translator, then a compilier.
+2. Usually JS is interpretted and then compiled.

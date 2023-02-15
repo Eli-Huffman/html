@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Random color event object example</title>
+    <style>
+      button {
+        margin: 10px;
+        font-size: 300%;
+        padding: 30px;
+        border-width: 5px;
+        border-color: black
+      };
+    </style>
+    <input id="textBox" type="text" />
+    <div id="output"></div>
+  </head>
+  <body>
+    <button>Change color</button>
+    <button id="button2">Change page color</button>
+    <script>
+      const btn = document.querySelector('button');
+      const btn2 = document.querySelector('#button2');
+
+      function random(number) {
+        return Math.floor(Math.random() * (number+1));
+      }
+
+      function bgChange(e) {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        const rndCol2 = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        e.target.style.backgroundColor = rndCol;
+        e.target.style.borderColor = rndCol2;
+        console.log(e);
+      }
+      function pageChange(){
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        document.body.style.backgroundColor = rndCol;
+      }
+
+      btn.addEventListener('click', bgChange);
+      btn2.addEventListener('click', pageChange);
+
+      const textBox = document.querySelector("#textBox");
+        const output = document.querySelector("#output");
+        textBox.addEventListener('keydown', (event) => output.textContent = `You pressed "${event.key}".`);
+    </script>
+  </body>
+</html>
